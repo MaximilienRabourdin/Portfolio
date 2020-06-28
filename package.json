@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "release": "git stash save before-gh-pages; npm run build && git checkout gh-pages && cp -rf build/* . && rm -rf build/"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
