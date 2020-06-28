@@ -10,7 +10,7 @@ import Study from './components/Study';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-//Import Styled 
+//Import Styled
 import AppStyled from './AppStyled';
 
 
@@ -23,9 +23,9 @@ class App extends Component {
 
   render() {
     return (
-     <Router> 
+     <Router>
      <AppStyled className="App">
- 
+
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/compétences" component={Level} />
@@ -33,12 +33,12 @@ class App extends Component {
       <Route path="/parcours" component={Study} />
       <Route path="/contact" component={Contact} />
 
-     
-      <Footer /> 
-  
+
+      <Footer />
+
     </AppStyled>
-    </Router> 
-  
+    </Router>
+
   );
   }
 }
