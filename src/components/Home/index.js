@@ -1,7 +1,5 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
-import {Link} from 'react-router-dom';
-
 
 //Styled
 import HomeStyled from './HomeStyled';
@@ -19,7 +17,7 @@ const Home = () => (
 
   <MediaQuery maxDeviceWidth={425}>
 
-<div className="mobile">
+<div className="mobile" id="accueil">
 
       
       <h1 className='h1Mobile' > Maximilien Rabourdin</h1>
@@ -29,7 +27,10 @@ const Home = () => (
 src={MaxMobile} alt="Max-mobile" className="maxi-mobile"></img>
 
 
-      <Link className='buttonMobile' to="/contact"> Contactez-moi </Link>
+      <a
+      className='buttonMobile'
+      href="mailto: maximilien.rabourdin@gmail.com" > Contactez-moi </a>
+      
 
      
 </div>  
@@ -44,10 +45,14 @@ src={MaxMobile} alt="Max-mobile" className="maxi-mobile"></img>
       <h1> Maximilien Rabourdin </h1>
       <h2> Développeur Front-End </h2>
       <h3> Spécialisation React </h3>
-      <Link className="contact-button" to="/contact" > Contactez-moi </Link>
+
+          
+    <a className="contact-button" href="mailto:maximilien.rabourdin@gmail.com" > Contactez-moi </a>
 
     </div>
-    
+
+  
+
     <img 
     src={Maximilien} 
     alt="Max" 

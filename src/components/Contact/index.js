@@ -3,95 +3,94 @@ import ContactStyled from './ContactStyled';
 import MediaQuery from 'react-responsive';
 import "regenerator-runtime/runtime.js";
 
-
-import axios from 'axios';
+import { Button, Icon, Container } from 'semantic-ui-react'
 
 
 
 export default class Contact extends Component {
 
 
-  state = {
-    name: '',
-    email: '',
-    message: '',
-    sent: false,
-    buttonText: 'Send Message',
+  // state = {
+  //   name: '',
+  //   email: '',
+  //   message: '',
+  //   sent: false,
+  //   buttonText: 'Send Message',
 
-  }
-
-
-  // handle inputs 
-
-  handleName = (e) => {
-    this.setState({
-      name: e.target.value
-    })
-  }
+  // }
 
 
-  handleEmail = (e) => {
-    this.setState({
-      email: e.target.value
-    })
-  }
+  // // handle inputs 
 
-  handleMessage = (e) => {
-    this.setState({
-      message: e.target.value
-    })
-  }
-
-  // end of handle inputs
+  // handleName = (e) => {
+  //   this.setState({
+  //     name: e.target.value
+  //   })
+  // }
 
 
+  // handleEmail = (e) => {
+  //   this.setState({
+  //     email: e.target.value
+  //   })
+  // }
 
-  formSubmit = (e) => {
-    e.preventDefault();
+  // handleMessage = (e) => {
+  //   this.setState({
+  //     message: e.target.value
+  //   })
+  // }
+
+  // // end of handle inputs
 
 
 
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    }
+  // formSubmit = (e) => {
+  //   e.preventDefault();
+
+
+
+  //   let data = {
+  //     name: this.state.name,
+  //     email: this.state.email,
+  //     message: this.state.message
+  //   }
 
 
 
 
-    axios.post('/api/forma', data)
-      .then(res => {
-        this.setState({
-          sent: true,
-        }, this.resetForm())
-      })
-      .catch(() => {
-        console.log('message not send');
+  //   axios.post('/api/forma', data)
+  //     .then(res => {
+  //       this.setState({
+  //         sent: true,
+  //       }, this.resetForm())
+  //     })
+  //     .catch(() => {
+  //       console.log('message not send');
 
-      })
-
-
-  }
-
-  // for reseting the form data
-  resetForm = () => {
-    this.setState({
-      name: '',
-      message: '',
-      email: '',
-
-    })
-
-    setTimeout(() => {
-      this.setState({
-        sent: false,
+  //     })
 
 
+  // }
 
-      })
-    }, 20000)
-  }
+  // // for reseting the form data
+  // resetForm = () => {
+  //   this.setState({
+  //     name: '',
+  //     message: '',
+  //     email: '',
+
+  //   })
+
+  //   setTimeout(() => {
+  //     this.setState({
+  //       sent: false,
+
+
+
+  //     })
+  //   }, 20000)
+  // }
 
 
   render() {
@@ -99,156 +98,148 @@ export default class Contact extends Component {
 
       <ContactStyled>
 
-         <MediaQuery maxDeviceWidth={425}>
+        <MediaQuery maxDeviceWidth={425}>
 
           <div className="contents-mobile">
 
-         <div className="title-contents-mobile">
+            <div className="title-contents-mobile">
 
-            <h1 className="contact-title-mobile" id="contact"> Contact </h1>
+              <h1 className="contact-title-mobile" id="contact"> Contact </h1>
 
-            <p className="contact-message"> Je suis une personne curieuse, passionné par le déveveloppement, les technologies et même la cuisine japonaise... mais chut faut pas le dire !</p>
+              <p className="contact-message"> Je suis une personne curieuse, passionné par le déveveloppement, les technologies et même la cuisine japonaise... mais chut faut pas le dire !</p>
+
+
+            </div>
+
+
+
+<div className="buttons-mobile"> 
+         
+            <Button
+              animated
+              compact
+              fluid
+              size='medium'
+              color='black'
+              href="https://github.com/MaximilienRabourdin"
+              
+            >
+              <Button.Content visible>  <Icon name='github' /> Github</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
+
+            <Button
+              animated
+              compact
+              fluid
+              size='medium'
+              color='linkedin'
+          
+              href="https://www.linkedin.com/in/maximilien-rabourdin-523b94b4/"
+              compact
+            >
+              <Button.Content visible>  <Icon name='linkedin' /> Linkedin</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
+
+
+
+            <Button
+              animated
+              compact
+              fluid
+              size='medium'
+              color='instagram'
+              href="mailto: maximilien.rabourdin@gmail.com"
+              compact
+            >
+              <Button.Content visible>  <Icon name='mail' /> E-mail</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
 
             
-          </div>
-
-          <div className="container">
-            <form onSubmit={this.formSubmit}>
-
-              <div className="singleItem">
-                <label htmlFor="name"> Nom </label>
-
-                <input
-                  type="text"
-                  name="name"
-                  className="name"
-                  value={this.state.name}
-                  onChange={this.handleName}
-                  placeholder="Qui êtes-vous ?" required />
-
-              </div>
-
-
-              <div className="singleItem">
-                <label htmlFor="email">Email</label>
-
-                <input
-                  type="email"
-                  name="email"
-                  className="email"
-                  value={this.state.email}
-                  onChange={this.handleEmail}
-                  placeholder="Votre adresse mail..." required />
-
-              </div>
-
-
-              <div className="textArea singleItem">
-                <label htmlFor="message">Message</label>
-
-                <textarea
-                  name="message"
-                  value={this.state.message}
-                  id="" cols="30" rows="5"
-                  placeholder="Votre message..."
-                  onChange={this.handleMessage}>
-                </textarea>
-
-
-              </div>
-
-
-              <div className={this.state.sent ? 'msg msgAppear' : 'msg'}> Votre message a bien été envoyé  </div>
-
-              <div className="btn">
-
-                <button type="submit">Envoyer</button>
-
-              </div>
-
-            </form>
-          </div>
+</div>
 
           </div>
-          
-
-        </MediaQuery> 
 
 
-
-
-
-
+        </MediaQuery>
 
 
 
         <MediaQuery minDeviceWidth={426}>
 
+     
+         
           <div className="title-contents">
 
             <h1 className="contact-title" id="contact"> Contact </h1>
 
             <p className="contact-message"> Je suis une personne curieuse, passionné par le déveveloppement, les technologies et même la cuisine japonaise... mais chut faut pas le dire !</p>
 
-            
           </div>
 
-          <div className="container">
-            <form onSubmit={this.formSubmit}>
-
-              <div className="singleItem">
-                <label htmlFor="name"> Nom </label>
-
-                <input
-                  type="text"
-                  name="name"
-                  className="name"
-                  value={this.state.name}
-                  onChange={this.handleName}
-                  placeholder="Qui êtes-vous ?" required />
-
-              </div>
+          
+      
 
 
-              <div className="singleItem">
-                <label htmlFor="email">Email</label>
+<div className="buttons"> 
+          <Button.Group>
+            <Button
+              animated
+              compact
+              size='big'
+              color='black'
+              href="https://github.com/MaximilienRabourdin"
+              compact
+            >
+              <Button.Content visible>  <Icon name='github' /> Github</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
 
-                <input
-                  type="email"
-                  name="email"
-                  className="email"
-                  value={this.state.email}
-                  onChange={this.handleEmail}
-                  placeholder="Votre adresse mail..." required />
-
-              </div>
-
-
-              <div className="textArea singleItem">
-                <label htmlFor="message">Message</label>
-
-                <textarea
-                  name="message"
-                  value={this.state.message}
-                  id="" cols="30" rows="5"
-                  placeholder="Votre message..."
-                  onChange={this.handleMessage}>
-                </textarea>
+            <Button
+              animated
+              compact
+              size='big'
+              color='linkedin'
+          
+              href="https://www.linkedin.com/in/maximilien-rabourdin-523b94b4/"
+              compact
+            >
+              <Button.Content visible>  <Icon name='linkedin' /> Linkedin</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
 
 
-              </div>
+
+            <Button
+              animated
+              compact
+              size='big'
+              color='instagram'
+              href="mailto: maximilien.rabourdin@gmail.com"
+              compact
+            >
+              <Button.Content visible>  <Icon name='mail' /> E-mail</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' className="arrow" />
+              </Button.Content>
+            </Button>
+
+            </Button.Group> 
+</div>
 
 
-              <div className={this.state.sent ? 'msg msgAppear' : 'msg'}> Votre message a bien été envoyé  </div>
-
-              <div className="btn">
-
-                <button type="submit">Envoyer</button>
-
-              </div>
-
-            </form>
-          </div>
 
         </MediaQuery>
 

@@ -11,7 +11,7 @@ const Footer = () => (
 
   <div href="#header">
   
-   <Icon className="arrow"  link name='arrow up' size='big' />
+   <Icon className="arrow"  link name='arrow up' size='big'/>
   </div>
 
   

@@ -17,7 +17,7 @@ export default () => (
 
     <div className="desktop">
 
-      <h2 className="portfolio-title"> portfolio </h2>
+      <h2 className="portfolio-title" id="portfolio"> portfolio </h2>
 
       <div className="flexbox">
 

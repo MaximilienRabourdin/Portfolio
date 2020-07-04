@@ -16,7 +16,7 @@ const Study = () => (
 
 <div className="mobile"> 
 
-<h2 className ="study-title" id="parcour"> Parcours </h2>
+<h2 className ="study-title" id="parcours"> Parcours </h2>
 
 <div className="all-mobile">
   
@@ -66,7 +66,7 @@ const Study = () => (
 <MediaQuery minDeviceWidth={426}>
 
 
-<h2 className ="study-title" id="parcour"> Parcours </h2>
+<h2 className ="study-title" id="parcours"> Parcours </h2>
 
 <div className="all">
   

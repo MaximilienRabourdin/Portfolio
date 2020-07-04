@@ -18,7 +18,9 @@ height: 100vh;
 position:relative;
 color: #F0304A;
 left:10em;
+padding:2em;
 top:6em;
+bottom:2em;
 line-height: 4em;
 width: 50%;
 }
@@ -43,6 +45,7 @@ h3 {
   font-family: 'Lato', sans-serif;
   font-weight:300;
   color: black;
+  padding-bottom:1em;
   
 }
 
@@ -59,8 +62,9 @@ h3 {
 
 
 .contact-button {
-    margin-top:1rem;
-    padding: 2em;
+  
+    padding:2em;
+    bottom:20px;
     border:5px solid #EB1F41;
     border-radius: .4em;
     background-color: #EB1F41;
@@ -70,6 +74,7 @@ h3 {
     font-family: 'Lato', sans-serif;
     font-weight:300;
     text-decoration: none;
+    
 }
 
 }
@@ -84,7 +89,7 @@ h3 {
 
 position:relative;
 color: #F0304A;
-left:10em;
+left:6em;
 top:1em;
 line-height: 4em;
 width: 50%;
@@ -187,7 +192,7 @@ h3 {
 
 position:relative;
 color: #F0304A;
-left:5em;
+left:2.6em;
 top:-3em;
 line-height: 3em;
 width: 50%;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+//Import Semantic-UI React
+import 'semantic-ui-css/semantic.min.css'
 
 // == Import
 import Header from './components/Header';
@@ -23,21 +25,21 @@ class App extends Component {
 
   render() {
     return (
-     <Router>
+     
      <AppStyled className="App">
 
       <Header />
-      <Route exact path="/" component={Home} />
-      <Route path="/compétences" component={Level} />
-      <Route path="/portfolio" component={Carousel} />
-      <Route path="/parcours" component={Study} />
-      <Route path="/contact" component={Contact} />
+      <Home /> 
+      <Level/>
+      <Carousel/>
+      <Study/>
+      <Contact />
 
 
       <Footer />
 
     </AppStyled>
-    </Router>
+   
 
   );
   }

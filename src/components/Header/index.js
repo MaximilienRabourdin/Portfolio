@@ -69,23 +69,23 @@ export default function Header() {
 
         <div className="menu">
 
-        <Button className="button" href="/" >
+        <Button className="button" id="accueil" href="/" >
             Accueil
 </Button>
 
-          <Button className="button" href="/compétences" >
+          <Button className="button" href="#compétences" >
             Compétences
 </Button>
 
-          <Button className="button" href="/portfolio">
+          <Button className="button" href="#portfolio">
             Portfolio
 </Button>
 
-          <Button className="button" href="/parcours" >
+          <Button className="button" href="#parcours" >
             Parcours
 </Button>
 
-          <Button className="button" href="/contact" >
+          <Button className="button" href="#contact" >
             Contact
 </Button>
         </div>
